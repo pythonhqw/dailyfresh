@@ -1,11 +1,21 @@
 from django.contrib.auth.models import AbstractUser
 from django.db import models
+from itsdangerous import TimedJSONWebSignatureSerializer
 
+from dailyfresh import settings
 from utils.models import BaseModel
 
 
 class User(BaseModel, AbstractUser):
     """用户信息模型类"""
+
+    def generate_active_token(self):
+        """生成加密数据"""
+        # 参数1：密钥     参数2：过期时间
+        serializer = TimedJSONWebSignatureSerializer(settings.SECRET_KEY, 60*60*2)
+        token = serializer.dumps({'confirm': self.id})
+        # 得到的是bytes 数据   要转换成   str
+        return token.decode()
 
     class Meta(object):
         db_table = 'df_user'
