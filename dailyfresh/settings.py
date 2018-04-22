@@ -136,3 +136,26 @@ EMAIL_PORT = 25                             # 邮箱服务器端口（默认都�
 EMAIL_HOST_USER = 'hqw6252@163.com'         # 发件人（天天生鲜官方邮箱账号）
 EMAIL_HOST_PASSWORD = 'qiuwei123'           # 客户端授权码，非邮箱登录密码
 EMAIL_FROM = '天天生鲜<hqw6252@163.com>'     # 打开邮件显示在‘发件人’中的签名
+
+
+# django项目的缓存配置
+CACHES = {
+    "default": {
+        "BACKEND": "django_redis.cache.RedisCache",
+        "LOCATION": "redis://127.0.0.1:6379/3",
+        "OPTIONS": {
+            "CLIENT_CLASS": "django_redis.client.DefaultClient",
+            "PASSWORD": ""
+        }
+    }
+}
+
+# 保存session数据缓到Redis中
+SESSION_ENGINE = "django.contrib.sessions.backends.cache"
+SESSION_CACHE_ALIAS = "default"
+
+
+
+
+
+
