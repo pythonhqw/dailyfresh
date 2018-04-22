@@ -13,9 +13,9 @@ class User(BaseModel, AbstractUser):
         """生成加密数据"""
         # 参数1：密钥     参数2：过期时间
         serializer = TimedJSONWebSignatureSerializer(settings.SECRET_KEY, 60*60*2)
-        token = serializer.dumps({'confirm': self.id})
+        datas = serializer.dumps({'confirm': self.id})
         # 得到的是bytes 数据   要转换成   str
-        return token.decode()
+        return datas.decode()
 
     class Meta(object):
         db_table = 'df_user'

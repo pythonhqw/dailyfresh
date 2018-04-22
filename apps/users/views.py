@@ -53,6 +53,7 @@ from apps.users.models import User
 #     # todo： 发送激活邮件
 #
 #     return HttpResponse("注册成功，进入登陆页面")
+from celery_tasks.tasks import send_active_mail
 from dailyfresh import settings
 
 
@@ -98,11 +99,15 @@ class RegisterView(View):
 
         # todo： 发送激活邮件
         token = user.generate_active_token()
-        self.send_active_mail(username, email, token)
+        # 同步发送会阻塞
+        # self.send_active_mail(username, email, token)
+        # celery异步发送
+        send_active_mail.delay(username, email, token)
 
         return HttpResponse("注册成功，进入登陆页面")
 
-    def send_active_mail(self, username, email, token):
+    @staticmethod
+    def send_active_mail(username, email, token):
         """发送激活邮件"""
         subject = '天天生鲜激活邮件'            # 主题
         message = ''                          # 正文
