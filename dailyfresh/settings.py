@@ -155,7 +155,8 @@ SESSION_ENGINE = "django.contrib.sessions.backends.cache"
 SESSION_CACHE_ALIAS = "default"
 
 
-
+# 登录验证失败跳转到首页
+LOGIN_URL = '/users/login'
 
 
 

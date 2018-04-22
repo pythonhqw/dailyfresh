@@ -14,6 +14,7 @@ from apps.users.models import User
 
 from celery_tasks.tasks import send_active_mail
 from dailyfresh import settings
+from utils.comment import LoginRequiredMixin
 
 
 class RegisterView(View):
@@ -151,3 +152,36 @@ class LogoutView(View):
         # 调用django的logout方法，实现退出，会自动清除用户登录的id
         logout(request)
         return redirect(reverse('goods:index'))
+
+
+class UserInfoView(LoginRequiredMixin, View):
+    """用户信息类视图"""
+
+    def get(self, request):
+        context = {
+            'tag': 1
+        }
+        return render(request, 'user_center_info.html', context)
+
+
+class UserOrderView(LoginRequiredMixin, View):
+    """用户订单类视图"""
+
+    def get(self, request):
+        context = {
+            'tag': 2
+        }
+        return render(request, 'user_center_order.html', context)
+
+
+class UserAddressView(LoginRequiredMixin, View):
+    """用户地址类视图"""
+
+    def get(self, request):
+        context = {
+            'tag': 3
+        }
+        return render(request, 'user_center_site.html', context)
+
+
+
