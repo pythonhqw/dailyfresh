@@ -9,8 +9,7 @@ from django.shortcuts import render, redirect
 from django.views.generic import View
 from itsdangerous import TimedJSONWebSignatureSerializer, SignatureExpired
 
-from apps.users.models import User
-
+from apps.users.models import User, Address
 
 from celery_tasks.tasks import send_active_mail
 from dailyfresh import settings
@@ -139,9 +138,14 @@ class LoginView(View):
 
         # 登录成功，使用session保存用户登录状态
         login(request, user)
-        # 响应请求
 
-        return redirect(reverse('goods:index'))
+        # 登录成功后要跳转到next指定的界面
+        next = request.GET.get("next")
+        if next:
+            return redirect(next)
+        else:
+            # 响应请求
+            return redirect(reverse('goods:index'))
 
 
 class LogoutView(View):
@@ -158,8 +162,17 @@ class UserInfoView(LoginRequiredMixin, View):
     """用户信息类视图"""
 
     def get(self, request):
+
+        # 查询登录用户最新添加的地址，并显示出来
+        try:
+            # address = Address.objects.filter(user=request.user).order_by('-create_time')[0]
+            address = request.user.address_set.latest("create_time")
+        except:
+            address = None
+
         context = {
-            'tag': 1
+            'tag': 1,
+            'address': address,
         }
         return render(request, 'user_center_info.html', context)
 
@@ -178,10 +191,40 @@ class UserAddressView(LoginRequiredMixin, View):
     """用户地址类视图"""
 
     def get(self, request):
+
+        # 查询登录用户最新添加的地址，并显示出来
+        try:
+            # address = Address.objects.filter(user=request.user).order_by('-create_time')[0]
+            address = request.user.address_set.latest("create_time")
+        except:
+            address = None
+
         context = {
-            'tag': 3
+            'tag': 3,
+            'address': address,
         }
         return render(request, 'user_center_site.html', context)
+
+    def post(self, request):
+
+        # 获取post请求参数
+        receiver = request.POST.get('receiver')
+        detail = request.POST.get('detail')
+        zip_code = request.POST.get('zip_code')
+        mobile = request.POST.get('mobile')
+        # 参数校验
+        if not all([receiver, detail, mobile]):
+            return HttpResponse('参数不能为空')
+        # 新增一个地址
+        Address.objects.create(
+            receiver_name=receiver,
+            receiver_mobile=mobile,
+            detail_addr=detail,
+            zip_code=zip_code,
+            user=request.user,
+        )
+        # 添加地址成功，回到当前页面，刷新
+        return redirect(reverse('users:address'))
 
 
 
