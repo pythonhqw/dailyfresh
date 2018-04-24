@@ -179,8 +179,9 @@ class UserInfoView(LoginRequiredMixin, View):
 
         # 解决
         skus = []
-        for sku_id in sku_ids:
-            sku = GoodsSKU.objects.get(id=sku_id)
+        for sku_id in sku_ids:      # sku_id: bytes
+            sku = GoodsSKU.objects.get(id=int(sku_id))
+            # print(sku)
             skus.append(sku)
 
         # 查询登录用户最新添加的地址，并显示出来

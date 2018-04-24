@@ -13,7 +13,7 @@ https://docs.djangoproject.com/en/1.8/ref/settings/
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
 
-from django.conf.global_settings import STATICFILES_DIRS
+from django.conf.global_settings import STATICFILES_DIRS, DEFAULT_FILE_STORAGE
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -159,4 +159,5 @@ SESSION_CACHE_ALIAS = "default"
 LOGIN_URL = '/users/login'
 
 
-
+# 配置Django自定义的存储系统
+DEFAULT_FILE_STORAGE = 'utils.fdfs.storage.FdfsStorage'

@@ -28,68 +28,70 @@
 
     <div class="center_con clearfix">
         <ul class="subnav fl">
-            <li><a href="#model01" class="fruit">新鲜水果</a></li>
-            <li><a href="#model02" class="seafood">海鲜水产</a></li>
-            <li><a href="#model03" class="meet">猪牛羊肉</a></li>
-            <li><a href="#model04" class="egg">禽类蛋品</a></li>
-            <li><a href="#model05" class="vegetables">新鲜蔬菜</a></li>
-            <li><a href="#model06" class="ice">速冻食品</a></li>
+            {#显示类别#}
+            {% for category in categories %}
+                <li><a href="#model0{{ forloop.counter }}" class="{{ category.logo }}">{{ category.name }}</a></li>
+            {% endfor %}
+
         </ul>
         <div class="slide fl">
             <ul class="slide_pics">
-                <li><img src="images/slide.jpg" alt="幻灯片"></li>
-                <li><img src="images/slide02.jpg" alt="幻灯片"></li>
-                <li><img src="images/slide03.jpg" alt="幻灯片"></li>
-                <li><img src="images/slide04.jpg" alt="幻灯片"></li>
+                {#显示轮播图#}
+                {% for slide_sku in slide_skus %}
+                    <li><img src="{{ slide_sku.image.url }}" alt="幻灯片"></li>
+                {% endfor %}
+
             </ul>
             <div class="prev"></div>
             <div class="next"></div>
             <ul class="points"></ul>
         </div>
         <div class="adv fl">
-            <a href="#"><img src="images/adv01.jpg"></a>
-            <a href="#"><img src="images/adv02.jpg"></a>
+            {#显示促销活动#}
+            {% for promotion in promotions %}
+                <a href="#"><img src="{{ promotion.image.url }}"></a>
+            {% endfor %}
+
         </div>
     </div>
 
-    <div class="list_model">
-        <div class="list_title clearfix">
-            <h3 class="fl" id="model01">新鲜水果</h3>
-            <div class="subtitle fl">
-                <span>|</span>
-                <a href="#">鲜芒</a>
-                <a href="#">加州提子</a>
-                <a href="#">亚马逊牛油果</a>
+    {#显示类别商品#}
+    {% for category in categories %}
+        <div class="list_model">
+            <div class="list_title clearfix">
+                <h3 class="fl" id="model01">{{ category.name }}</h3>
+                <div class="subtitle fl">
+                    <span>|</span>
+                    {#显示类别文字商品#}
+                    {% for c_sku in category.text_skus %}
+                        <a href="#">{{ c_sku.sku.name }}</a>
+                    {% endfor %}
+
+                </div>
+                <a href="#" class="goods_more fr" id="fruit_more">查看更多 ></a>
             </div>
-            <a href="#" class="goods_more fr" id="fruit_more">查看更多 ></a>
-        </div>
 
-        <div class="goods_con clearfix">
-            <div class="goods_banner fl"><img src="images/banner01.jpg"></div>
-            <ul class="goods_list fl">
-                <li>
-                    <h4><a href="#">草莓</a></h4>
-                    <a href="#"><img src="images/goods/goods003.jpg"></a>
-                    <div class="prize">¥ 30.00</div>
-                </li>
-                <li>
-                    <h4><a href="#">葡萄</a></h4>
-                    <a href="#"><img src="images/goods/goods002.jpg"></a>
-                    <div class="prize">¥ 5.50</div>
-                </li>
-                <li>
-                    <h4><a href="#">柠檬</a></h4>
-                    <a href="#"><img src="images/goods/goods001.jpg"></a>
-                    <div class="prize">¥ 3.90</div>
-                </li>
-                <li>
-                    <h4><a href="#">奇异果</a></h4>
-                    <a href="#"><img src="images/goods/goods012.jpg"></a>
-                    <div class="prize">¥ 25.80</div>
-                </li>
-            </ul>
+            <div class="goods_con clearfix">
+                <div class="goods_banner fl"><img src="{{ category.image.url }}"></div>
+                <ul class="goods_list fl">
+
+                    {#显示类别图片商品#}
+                    {% for c_sku in category.image_skus %}
+                        <li>
+                            <h4><a href="#">{{ c_sku.sku.name }}</a></h4>
+                            <a href="#"><img src="{{ c_sku.sku.default_image.url }}"></a>
+                            <div class="prize">¥ {{ c_sku.sku.price }}</div>
+                        </li>
+                    {% endfor %}　
+
+
+                </ul>
+            </div>
+
         </div>
-    </div>
+    {% endfor %}
+
+
 {% endblock %}
 
 
