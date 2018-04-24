@@ -7,8 +7,11 @@ from django.db.utils import IntegrityError
 from django.http.response import HttpResponse
 from django.shortcuts import render, redirect
 from django.views.generic import View
+from django_redis import get_redis_connection
 from itsdangerous import TimedJSONWebSignatureSerializer, SignatureExpired
+from redis import StrictRedis
 
+from apps.goods.models import GoodsSKU
 from apps.users.models import User, Address
 
 from celery_tasks.tasks import send_active_mail
@@ -163,6 +166,23 @@ class UserInfoView(LoginRequiredMixin, View):
 
     def get(self, request):
 
+        # todo: 从redis中读取当前登录用户浏览过的商品
+        # 返回一个StrictRedis
+        strict_redis = get_redis_connection()    # type: StrictRedis
+        # 读取所以的商品id，返回一个列表
+        key = 'history_%s' % request.user.id
+        # 最多只取出5个商品id
+        sku_ids = strict_redis.lrange(key, 0, 4)
+        # 根据商品的id，查询出商品的对象
+        # 顺序有问题
+        # skus = GoodsSKU.objects.filter(id__in=sku_ids)
+
+        # 解决
+        skus = []
+        for sku_id in sku_ids:
+            sku = GoodsSKU.objects.get(id=sku_id)
+            skus.append(sku)
+
         # 查询登录用户最新添加的地址，并显示出来
         try:
             # address = Address.objects.filter(user=request.user).order_by('-create_time')[0]
@@ -173,6 +193,7 @@ class UserInfoView(LoginRequiredMixin, View):
         context = {
             'tag': 1,
             'address': address,
+            'skus': skus,
         }
         return render(request, 'user_center_info.html', context)
 
