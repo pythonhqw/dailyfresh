@@ -17,8 +17,8 @@
 
                 {% for sku in skus %}
                     <li>
-                        <a href="detail.html"><img src="{{ sku.default_image.url }}"></a>
-                        <h4><a href="detail.html">{{ sku.name }}</a></h4>
+                        <a href="{% url 'goods:detail' sku.id %}"><img src="{{ sku.default_image.url }}"></a>
+                        <h4><a href="{% url 'goods:detail' sku.id %}">{{ sku.name }}</a></h4>
                         <div class="operate">
                             <span class="prize">￥{{ sku.price }}</span>
                             <span class="unit">￥{{ sku.price }}/{{ sku.unit }}</span>

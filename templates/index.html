@@ -38,7 +38,8 @@
             <ul class="slide_pics">
                 {#显示轮播图#}
                 {% for slide_sku in slide_skus %}
-                    <li><img src="{{ slide_sku.image.url }}" alt="幻灯片"></li>
+                    <a href="{% url 'goods:detail' slide_sku.sku.id %}">
+                    <li><img src="{{ slide_sku.image.url }}" alt="幻灯片"></li></a>
                 {% endfor %}
 
             </ul>
@@ -64,7 +65,7 @@
                     <span>|</span>
                     {#显示类别文字商品#}
                     {% for c_sku in category.text_skus %}
-                        <a href="#">{{ c_sku.sku.name }}</a>
+                        <a href="{% url 'goods:detail' c_sku.sku.id %}">{{ c_sku.sku.name }}</a>
                     {% endfor %}
 
                 </div>
@@ -78,8 +79,8 @@
                     {#显示类别图片商品#}
                     {% for c_sku in category.image_skus %}
                         <li>
-                            <h4><a href="#">{{ c_sku.sku.name }}</a></h4>
-                            <a href="#"><img src="{{ c_sku.sku.default_image.url }}"></a>
+                            <h4><a href="{% url 'goods:detail' c_sku.sku.id %}">{{ c_sku.sku.name }}</a></h4>
+                            <a href="{% url 'goods:detail' c_sku.sku.id %}"><img src="{{ c_sku.sku.default_image.url }}"></a>
                             <div class="prize">¥ {{ c_sku.sku.price }}</div>
                         </li>
                     {% endfor %}　

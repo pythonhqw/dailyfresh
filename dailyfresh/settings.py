@@ -161,3 +161,12 @@ LOGIN_URL = '/users/login'
 
 # 配置Django自定义的存储系统
 DEFAULT_FILE_STORAGE = 'utils.fdfs.storage.FdfsStorage'
+
+
+
+
+
+
+
+
+
