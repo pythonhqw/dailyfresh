@@ -1,4 +1,5 @@
 from django.core.cache import cache
+from django.core.paginator import Paginator, EmptyPage
 from django.core.urlresolvers import reverse
 from django.shortcuts import render, redirect
 from django.http.response import HttpResponse
@@ -113,6 +114,63 @@ class DetailView(BaseCartView):
 
         return render(request, 'detail.html', context)
 
+
+class ListView(BaseCartView):
+    """商品列表视图"""
+
+    def get(self, request, category_id, page_num):
+
+        # 获取请求参数
+        sort = request.GET.get('sort')
+
+        # 校验参数的合法性
+        try:
+            category = GoodsCategory.objects.get(id=category_id)
+        except GoodsCategory.DoesNotExist:
+            return redirect(reverse('goods:index'))
+
+        # 查询对应的商品数据
+        # 商品分类信息
+        categories = GoodsCategory.objects.all()
+        # 新品推荐信息（在GoodsSKU表中，查询特定类别信息，按照时间倒序）
+        try:
+            new_skus = GoodsSKU.objects.filter(category=category).order_by('-create_time')[0:2]
+        except:
+            new_skus = None
+        # 商品列表信息
+        if sort == 'price':
+            skus = GoodsSKU.objects.filter(category=category).order_by('price')        # 价格排序
+        elif sort == 'hot':
+            skus = GoodsSKU.objects.filter(category=category).order_by('-sales')       # 销量排序
+        else:
+            skus = GoodsSKU.objects.filter(category=category)                          # 默认排序
+            sort = 'default'
+
+        # todo:商品分页信息
+        paginator = Paginator(skus, 2)
+        try:
+            page = paginator.page(page_num)
+        except EmptyPage:
+            page = paginator.page(1)
+
+        # 购物车信息
+        cart_count = self.get_cart_count(request)
+
+        # 定义模板显示的数据
+        context = {
+            'sort': sort,
+            'category': category,
+            'categories': categories,
+            'new_skus': new_skus,
+            # 'skus': skus,
+            'cart_count': cart_count,
+
+            'page': page,
+            'page_range': paginator.page_range,
+        }
+
+        # 响应请求
+        return render(request, 'list.html', context)
 
 
 
