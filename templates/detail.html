@@ -46,6 +46,7 @@
             <div class="prize_bar">
                 <span class="show_pirze">¥<em>{{ sku.price }}</em></span>
                 <span class="show_unit">单  位：{{ sku.unit }}</span>
+                <span class="show_unit">库  存：{{ sku.stock }}</span>
             </div>
 
 
@@ -74,7 +75,7 @@
             <div class="total">总价：<em>16.80元</em></div>
             <div class="operate_btn">
                 <a href="javascript:;" class="buy_btn">立即购买</a>
-                <a href="javascript:;" class="add_cart" id="add_cart">加入购物车</a>
+                <a href="javascript:;" class="add_cart" id="add_cart" sku_id={{ sku.id }}>加入购物车</a>
             </div>
         </div>
     </div>
@@ -116,29 +117,109 @@
 
 
 {% block bottom_js %}
+
+    {% load staticfiles %}
+    {% csrf_token %}
     <div class="add_jump"></div>
 
-    <script type="text/javascript" src="js/jquery-1.12.2.js"></script>
+    <script type="text/javascript" src="{% static 'js/jquery-1.12.4.min.js' %}"></script>
     <script type="text/javascript">
-        var $add_x = $('#add_cart').offset().top;
-        var $add_y = $('#add_cart').offset().left;
 
-        var $to_x = $('#show_count').offset().top;
-        var $to_y = $('#show_count').offset().left;
+        update_goods_info();
+        // 更新商品总金额
+        function update_goods_info() {
+            // 获取商品数量和单价
+            var count = $('.num_show').val();
+            var price = $('.show_pirze').children('em').text();
+            // 转换类型
+            count = parseInt(count);
+            price = parseFloat(price);
+            // 显示总金额
+            var amount = count * price;
+            $('.total').children('em').html(amount.toFixed(2)+'元');
+        };
 
-        $(".add_jump").css({'left': $add_y + 80, 'top': $add_x + 10, 'display': 'block'})
-        $('#add_cart').click(function () {
-            $(".add_jump").stop().animate({
-                    'left': $to_y + 7,
-                    'top': $to_x + 7
-                },
-                "fast", function () {
-                    $(".add_jump").fadeOut('fast', function () {
-                        $('#show_count').html(2);
-                    });
+        // todo:点击加号，新增商品数量
+        $('.add').click(function () {
+            // 获取商品数量
+            var count = $('.num_show').val();
+            count = parseInt(count);
+            // 数量加1
+            count +=1;
+            // 更新数量显示
+            $('.num_show').val(count);
+            update_goods_info();
+        });
+        // todo:点击减号，减少商品数量
+        $('.minus').click(function () {
+            // 获取商品数量
+            var count = $('.num_show').val();
+            count = parseInt(count);
+            if (count > 1) {
+                count -=1;
+                // 更新数量显示
+                $('.num_show').val(count);
+                update_goods_info();
+            }
+        });
+        // todo:手动输入商品数量
+        $('.num_show').blur(function () {
+            var count = $('.num_show').val();
+            // 判断输入内容的合法性
+            if (isNaN(count) || (count.trim().length == 0) || parseInt(count) < 1) {
+                // 数量重置为1
+                count = 1;
+            }
+            $('.num_show').val(parseInt(count));
+            update_goods_info();
+        });
 
-                });
-        })
+        // todo:添加商品到购物车
+        $('.add_cart').click(function () {
+
+            // 动画起始位置
+            var $add_x = $('#add_cart').offset().top;
+            var $add_y = $('#add_cart').offset().left;
+            // 动画结束位置
+            var $to_x = $('#show_count').offset().top;
+            var $to_y = $('#show_count').offset().left;
+
+
+            // 设置div的起始位置
+            $(".add_jump").css({'left': $add_y + 80, 'top': $add_x + 10, 'display': 'block'});
+
+            var count = $('.num_show').val();
+            var sku_id = $(this).attr('sku_id');
+            var csrf = $('input[name="csrfmiddlewaretoken"]').val();
+            // 定义post请求参数
+            var params = {
+                sku_id: sku_id,
+                count: count,
+                csrfmiddlewaretoken: csrf,
+            };
+            // 通过ajax发起post请求
+            $.post('/cart/add', params, function (data) {
+                // {'code': 0, 'total_count': total_count}
+                if (data.code == 0) {
+                    // 请求成功,执行移动的动画效果
+                    $(".add_jump").stop().animate({
+                            'left': $to_y + 7,
+                            'top': $to_x + 7
+                        },
+                        "fast", function () {
+                            $(".add_jump").fadeOut('fast', function () {
+                                // 显示商品总数量
+                                var total_count = data.total_count;
+                                $('#show_count').html(total_count);
+                            });
+                        });
+                }else {
+                    // 请求失败
+                    alert(data.errmsg);
+                };
+            });
+        });
+
     </script>
 
 {% endblock %}
