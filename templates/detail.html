@@ -63,20 +63,26 @@
                 </div>
             {% endif %}
 
+            <form method="post" action="{% url 'orders:place' %}">
+                {% csrf_token %}
+                <input type="hidden" name="sku_ids" value="{{ sku.id }}">
 
-            <div class="goods_num clearfix">
-                <div class="num_name fl">数 量：</div>
-                <div class="num_add fl">
-                    <input type="text" class="num_show fl" value="1">
-                    <a href="javascript:;" class="add fr">+</a>
-                    <a href="javascript:;" class="minus fr">-</a>
+                <div class="goods_num clearfix">
+                    <div class="num_name fl">数 量：</div>
+                    <div class="num_add fl">
+                        <input type="text" class="num_show fl" name="count" value="1">
+                        <a href="javascript:;" class="add fr">+</a>
+                        <a href="javascript:;" class="minus fr">-</a>
+                    </div>
                 </div>
-            </div>
-            <div class="total">总价：<em>16.80元</em></div>
-            <div class="operate_btn">
-                <a href="javascript:;" class="buy_btn">立即购买</a>
-                <a href="javascript:;" class="add_cart" id="add_cart" sku_id={{ sku.id }}>加入购物车</a>
-            </div>
+                <div class="total">总价：<em>16.80元</em></div>
+                <div class="operate_btn">
+
+                    <input type="submit" value="立即购买" class="buy_btn"/>
+                    <a href="javascript:;" class="add_cart" id="add_cart" sku_id={{ sku.id }}>加入购物车</a>
+                </div>
+            </form>
+
         </div>
     </div>
 

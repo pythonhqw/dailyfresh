@@ -19,7 +19,7 @@ urlpatterns = [
     url(r'^active/(.+)', views.ActiveView.as_view(), name="active"),
 
     # 用户订单
-    url(r'^orders$', views.UserOrderView.as_view(), name="orders"),
+    url(r'^orders/(\d+)$', views.UserOrderView.as_view(), name="orders"),
     # 用户地址
     url(r'^address$', views.UserAddressView.as_view(), name="address"),
     # 用户信息

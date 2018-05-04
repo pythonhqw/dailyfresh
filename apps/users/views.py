@@ -2,6 +2,8 @@ import re
 
 from django.contrib.auth import authenticate, login, logout
 from django.core.mail import send_mail
+from django.core.paginator import Paginator
+
 from django.core.urlresolvers import reverse
 from django.db.utils import IntegrityError
 from django.http.response import HttpResponse
@@ -12,6 +14,7 @@ from itsdangerous import TimedJSONWebSignatureSerializer, SignatureExpired
 from redis import StrictRedis
 
 from apps.goods.models import GoodsSKU
+from apps.orders.models import OrderInfo, OrderGoods
 from apps.users.models import User, Address
 
 from celery_tasks.tasks import send_active_mail
@@ -110,7 +113,7 @@ class ActiveView(View):
 class LoginView(View):
     """登录类视图"""
 
-    def get(self,request):
+    def get(self, request):
         """进入登陆界面"""
 
         return render(request, 'login.html')
@@ -145,7 +148,11 @@ class LoginView(View):
         # 登录成功后要跳转到next指定的界面
         next = request.GET.get("next")
         if next:
-            return redirect(next)
+            if next == '/orders/place':
+                response = redirect('/cart')
+            else:
+                response = redirect(next)
+            return response
         else:
             # 响应请求
             return redirect(reverse('goods:index'))
@@ -202,9 +209,36 @@ class UserInfoView(LoginRequiredMixin, View):
 class UserOrderView(LoginRequiredMixin, View):
     """用户订单类视图"""
 
-    def get(self, request):
+    def get(self, request, page_no):
+
+        # 查询当前登录用户所有的订单
+        orders = OrderInfo.objects.filter(user=request.user).order_by('-create_time')
+
+        for order in orders:
+            # 查询某个订单下的所有商品
+            order_skus = OrderGoods.objects.filter(order=order)
+
+            for order_sku in order_skus:
+                # 循环每一个订单商品，计算小计金额
+                order_sku.amount = order_sku.price * order_sku.count
+
+            # 新增实例属性
+            order.status_desc = OrderInfo.ORDER_STATUS.get(order.status)
+            order.total_pay = order.total_amount + order.trans_cost
+            order.order_skus = order_skus
+
+        # 创建分页对象
+        paginator = Paginator(orders, 1)
+        # 获取page对象
+        try:
+            page = paginator.page(page_no)
+        except:
+            page = paginator.page(1)
+
         context = {
-            'tag': 2
+            'tag': 2,
+            'page': page,
+            'page_range': paginator.page_range,
         }
         return render(request, 'user_center_order.html', context)
 
