@@ -1,4 +1,5 @@
 from datetime import datetime
+from time import sleep
 
 from django.core.urlresolvers import reverse
 from django.db import transaction
@@ -224,4 +225,123 @@ class CommitOrderView(View):
 
         # 订单创建成功， 响应请求，返回json
         return JsonResponse({'code': 0, 'message': '创建订单成功'})
+
+
+class OrderPayView(View):
+
+    def post(self, request):
+        """支付"""
+
+        if not request.user.is_authenticated():
+            return JsonResponse({'code': 1, 'errmsg': '请先登录'})
+
+        # 获取请求参数
+        order_id = request.POST.get('order_id')
+
+        if not order_id:
+            return JsonResponse({'code': 2, 'errmsg': '参数不能为空'})
+
+        # 查询订单对象
+        try:
+            order = OrderInfo.objects.get(order_id=order_id, status=1, user=request.user)
+        except:
+            return JsonResponse({'code': 3, 'errmsg': '无效订单'})
+
+        # 需要支付的总金额
+        total_pay = order.total_amount + order.trans_cost
+
+        # todo: 业务逻辑：调用第三方的SDK，实现支付功能
+        from alipay import AliPay
+
+        app_private_key_string = open("apps/orders/app_private_key.pem").read()
+        alipay_public_key_string = open("apps/orders/alipay_public_key.pem").read()
+
+        # 创建AliPay对象
+        alipay = AliPay(
+            appid="2016091500513478",   # 沙箱应用id（后期需要换成用户创建的应用id）
+            app_notify_url=None,  # 默认回调url
+            app_private_key_string=app_private_key_string,
+            alipay_public_key_string=alipay_public_key_string,  # 支付宝的公钥，验证支付宝回传消息使用，不是你自己的公钥,
+            sign_type="RSA2",  # RSA 或者 RSA2
+            debug=True,  # 默认False,True表示使用沙箱环境
+        )
+
+        # 电脑网站支付，需要跳转到https://openapi.alipay.com/gateway.do? + order_string
+        order_string = alipay.api_alipay_trade_page_pay(
+            out_trade_no=order_id,
+            total_amount=str(total_pay),
+            subject='天天生鲜测试订单',
+            return_url=None,
+            notify_url=None,  # 可选, 不填则使用默认notify url
+        )
+
+        # 定义支付引导界面的url
+        # 正式环境
+        # url = 'https://openapi.alipay.com/gateway.do?' + order_string
+        # 沙箱环境: dev
+        url = 'https://openapi.alipaydev.com/gateway.do?' + order_string
+
+        return JsonResponse({'code': 0, 'url': url})
+
+
+class OrderyCheckView(View):
+
+    def post(self, request):
+        """查询支付结果"""
+
+        if not request.user.is_authenticated():
+            return JsonResponse({'code': 1, 'errmsg': '请先登录'})
+
+        # 获取请求参数
+        order_id = request.POST.get('order_id')
+
+        if not order_id:
+            return JsonResponse({'code': 2, 'errmsg': '参数不能为空'})
+
+        # 查询订单对象
+        try:
+            order = OrderInfo.objects.get(order_id=order_id, status=1, user=request.user)
+        except:
+            return JsonResponse({'code': 3, 'errmsg': '无效订单'})
+
+        # todo: 业务逻辑：调用第三方的SDK，实现支付功能
+        from alipay import AliPay
+
+        app_private_key_string = open("apps/orders/app_private_key.pem").read()
+        alipay_public_key_string = open("apps/orders/alipay_public_key.pem").read()
+
+        # 创建AliPay对象
+        alipay = AliPay(
+            appid="2016091500513478",  # 沙箱应用id（后期需要换成用户创建的应用id）
+            app_notify_url=None,  # 默认回调url
+            app_private_key_string=app_private_key_string,
+            alipay_public_key_string=alipay_public_key_string,  # 支付宝的公钥，验证支付宝回传消息使用，不是你自己的公钥,
+            sign_type="RSA2",  # RSA 或者 RSA2
+            debug=True,  # 默认False,True表示使用沙箱环境
+        )
+
+        # todo: 调用第三方的SDK，查询支付结果
+        while True:
+            dict_data = alipay.api_alipay_trade_query(out_trade_no=order_id)
+            code = dict_data.get('code')
+            trade_status = dict_data.get('trade_status')
+            trade_no = dict_data.get('trade_no')
+
+            if code == '10000' and trade_status == 'TRADE_SUCCESS':
+                # 订单支付成功,修改订单状态
+                order.status = 4
+                order.trade_no = trade_no
+                order.save()
+                return JsonResponse({'code': 0, 'errmsg': '支付成功'})
+
+            elif (code == '10000' and trade_status == 'WAIT_BUYER_PAY') or code == '40004':
+                sleep(2)
+                continue
+
+            else:
+                # 支付失败
+                return JsonResponse({'code': 4, 'errmsg': '支付失败'})
+
+
+
 
