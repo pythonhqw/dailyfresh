@@ -25,9 +25,10 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '6hn8902(katl6wrn9@klgoav7tev4m)inl&o&64h)yw!s^q)-r'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-
-ALLOWED_HOSTS = []
+# DEBUG = True
+# ALLOWED_HOSTS = []
+DEBUG = False
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -99,10 +100,18 @@ WSGI_APPLICATION = 'dailyfresh.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'db_dailyfresh',
+        # 连接本地数据库
+        # 'NAME': 'db_dailyfresh',
+        # 'USER': 'root',
+        # 'PASSWORD': 'mysql',
+        # 'HOST': 'localhost',
+        # 'PORT': 3306,
+
+        # 连接远程数据库
+        'NAME': 'db_remote',
         'USER': 'root',
         'PASSWORD': 'mysql',
-        'HOST': 'localhost',
+        'HOST': '192.168.127.134',
         'PORT': 3306,
     }
 }
@@ -183,7 +192,8 @@ HAYSTACK_SIGNAL_PROCESSOR = 'haystack.signals.RealtimeSignalProcessor'
 # 设置全文检索结果每页显示2条数据
 HAYSTACK_SEARCH_RESULTS_PER_PAGE = 2
 
-
+# 指定收集的静态文件保存在哪个目录下
+STATIC_ROOT = '/home/python/Desktop/static'
 
 
 
