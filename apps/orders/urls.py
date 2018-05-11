@@ -11,4 +11,6 @@ urlpatterns = [
     url(r'^pay$', views.OrderPayView.as_view(), name='pay'),
     # 查询支付结果
     url(r'^check$', views.OrderyCheckView.as_view(), name='check'),
+    # 显示商品评价界面(url参数:订单id)
+    url(r'^comment/(\d+)$', views.CommentView.as_view(), name='comment'),
 ]

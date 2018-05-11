@@ -66,6 +66,19 @@
     <script src="{% static 'js/jquery-1.12.4.min.js' %}"></script>
     <script>
 
+    // 更新"去支付"a标签的显示
+     $('.oper_btn').each(function () {
+         // 获取支付状态
+         var status = $(this).attr('status');
+         if (status == 1){
+             $(this).text('去支付')
+         } else if (status == 4){
+             $(this).text('去评价')
+         } else if (status == 5){
+             $(this).text('已完成')
+         }
+     });
+
     // 设置按钮的点击事件
     $(".oper_btn").click(function () {
         // 获取请求参数
@@ -99,7 +112,11 @@
                     alert(data.errmsg);
                 }
             });
-        }
+        }else if(status == 4) {
+            // 跳转到评价页面
+             window.location.href = '/orders/comment/'+order_id;
+        };
+
     });
 
 

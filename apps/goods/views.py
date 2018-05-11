@@ -8,6 +8,7 @@ from django_redis import get_redis_connection
 from redis import StrictRedis
 
 from apps.goods.models import GoodsCategory, IndexSlideGoods, IndexPromotion, IndexCategoryGoods, GoodsSKU
+from apps.orders.models import OrderGoods
 
 
 class BaseCartView(View):
@@ -88,6 +89,9 @@ class DetailView(BaseCartView):
         # 查询最新商品推荐
         new_skus = GoodsSKU.objects.filter(category=sku.category).order_by('-create_time')[0:2]
 
+        # 获取商品的评论信息
+        order_skus = OrderGoods.objects.filter(sku=sku).exclude(comment='')
+
         # todo:查询其他规格的商品
         other_skus = GoodsSKU.objects.filter(spu=sku.spu).exclude(id=sku_id)
 
@@ -110,6 +114,7 @@ class DetailView(BaseCartView):
             'new_skus': new_skus,
             'cart_count': cart_count,
             'other_skus': other_skus,
+            'order_skus': order_skus,
         }
 
         return render(request, 'detail.html', context)

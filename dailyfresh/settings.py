@@ -27,7 +27,7 @@ SECRET_KEY = '6hn8902(katl6wrn9@klgoav7tev4m)inl&o&64h)yw!s^q)-r'
 # SECURITY WARNING: don't run with debug turned on in production!
 # DEBUG = True
 # ALLOWED_HOSTS = []
-DEBUG = False
+DEBUG = True
 ALLOWED_HOSTS = ['*']
 
 
@@ -101,18 +101,18 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         # 连接本地数据库
-        # 'NAME': 'db_dailyfresh',
-        # 'USER': 'root',
-        # 'PASSWORD': 'mysql',
-        # 'HOST': 'localhost',
-        # 'PORT': 3306,
-
-        # 连接远程数据库
-        'NAME': 'db_remote',
+        'NAME': 'db_dailyfresh',
         'USER': 'root',
         'PASSWORD': 'mysql',
-        'HOST': '192.168.127.134',
+        'HOST': 'localhost',
         'PORT': 3306,
+
+        # 连接远程数据库
+        # 'NAME': 'db_remote',
+        # 'USER': 'root',
+        # 'PASSWORD': 'mysql',
+        # 'HOST': '192.168.127.134',
+        # 'PORT': 3306,
     }
 }
 

@@ -152,3 +152,383 @@ spawned uWSGI worker 4 (pid: 87730, cores: 2)
 [pid: 87729|app: 0|req: 7/20] 127.0.0.1 () {40 vars in 659 bytes} [Sat May  5 10:34:59 2018] GET /js/slideshow.js => generated 89 bytes in 1 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 1)
 [pid: 87727|app: 0|req: 4/21] 127.0.0.1 () {42 vars in 740 bytes} [Sat May  5 10:35:03 2018] GET /detail/5 => generated 10513 bytes in 21 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
 [pid: 87726|app: 0|req: 9/22] 127.0.0.1 () {40 vars in 659 bytes} [Sat May  5 10:35:05 2018] GET /js/slideshow.js => generated 89 bytes in 1 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 0)
+*** Starting uWSGI 2.0.17 (64bit) on [Sat May  5 15:16:21 2018] ***
+compiled with version: 5.4.0 20160609 on 05 May 2018 00:37:30
+os: Linux-4.4.0-31-generic #50-Ubuntu SMP Wed Jul 13 00:07:12 UTC 2016
+nodename: ubuntu
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 2
+current working directory: /home/python/qiuwei/dailyfresh/dailyfresh
+writing pidfile to uwsgi.pid
+detected binary path: /home/python/.virtualenvs/django_py3/bin/uwsgi
+chdir() to /home/python/qiuwei/dailyfresh/dailyfresh
+your processes number limit is 15581
+your memory page size is 4096 bytes
+detected max file descriptor number: 1048576
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 127.0.0.1:8081 fd 3
+Python version: 3.5.2 (default, Nov 23 2017, 16:37:01)  [GCC 5.4.0 20160609]
+Set PythonHome to /home/python/.virtualenvs/django_py3
+Python main interpreter initialized at 0x219a520
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 416880 bytes (407 KB) for 8 cores
+*** Operational MODE: preforking+threaded ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x219a520 pid: 6333 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 6333)
+spawned uWSGI worker 1 (pid: 6337, cores: 2)
+spawned uWSGI worker 2 (pid: 6338, cores: 2)
+spawned uWSGI worker 3 (pid: 6339, cores: 2)
+spawned uWSGI worker 4 (pid: 6340, cores: 2)
+[pid: 6339|app: 0|req: 1/1] 127.0.0.1 () {42 vars in 691 bytes} [Sat May  5 15:16:49 2018] GET /detail/6 => generated 10509 bytes in 266 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 6337|app: 0|req: 1/2] 127.0.0.1 () {42 vars in 685 bytes} [Sat May  5 15:17:54 2018] GET /cart/ => generated 0 bytes in 142 msecs (HTTP/1.1 302) 4 headers in 157 bytes (1 switches on core 0)
+[pid: 6337|app: 0|req: 2/3] 127.0.0.1 () {46 vars in 858 bytes} [Sat May  5 15:18:07 2018] POST /users/login?next=/cart/ => generated 0 bytes in 385 msecs (HTTP/1.1 302) 6 headers in 336 bytes (1 switches on core 1)
+[pid: 6339|app: 0|req: 2/4] 127.0.0.1 () {46 vars in 863 bytes} [Sat May  5 15:18:17 2018] POST /orders/place => generated 6733 bytes in 142 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+[pid: 6340|app: 0|req: 1/5] 127.0.0.1 () {42 vars in 759 bytes} [Sat May  5 15:18:26 2018] GET /users/orders/1 => generated 6867 bytes in 328 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 6337|app: 0|req: 3/6] 127.0.0.1 () {42 vars in 761 bytes} [Sat May  5 15:18:32 2018] GET /users/orders/3 => generated 7468 bytes in 105 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 6340|app: 0|req: 2/7] 127.0.0.1 () {42 vars in 761 bytes} [Sat May  5 15:32:41 2018] GET /users/orders/1 => generated 6867 bytes in 36 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+[pid: 6340|app: 0|req: 3/8] 127.0.0.1 () {42 vars in 761 bytes} [Sat May  5 15:32:47 2018] GET /users/orders/2 => generated 7465 bytes in 25 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 6340|app: 0|req: 4/9] 127.0.0.1 () {40 vars in 712 bytes} [Sat May  5 16:08:01 2018] GET /orders_commet => generated 3004 bytes in 6 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 1)
+[pid: 6340|app: 0|req: 5/10] 127.0.0.1 () {40 vars in 716 bytes} [Sat May  5 16:08:12 2018] GET /orders_commet/1 => generated 3010 bytes in 4 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 0)
+[pid: 6339|app: 0|req: 3/11] 127.0.0.1 () {40 vars in 718 bytes} [Sat May  5 16:08:33 2018] GET /orders_comment/1 => generated 3013 bytes in 7 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 0)
+[pid: 6340|app: 0|req: 6/12] 127.0.0.1 () {40 vars in 730 bytes} [Sat May  5 16:08:50 2018] GET /orders/oeder_comment/1 => generated 3625 bytes in 5 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 1)
+[pid: 6339|app: 0|req: 4/13] 127.0.0.1 () {40 vars in 726 bytes} [Sat May  5 16:09:14 2018] GET /orders/order_comment => generated 3619 bytes in 4 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 1)
+[pid: 6340|app: 0|req: 7/14] 127.0.0.1 () {40 vars in 716 bytes} [Sat May  5 16:09:37 2018] GET /order_comment/1 => generated 3010 bytes in 4 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 0)
+[pid: 6337|app: 0|req: 4/15] 127.0.0.1 () {40 vars in 654 bytes} [Sat May  5 16:11:12 2018] GET /js/slideshow.js => generated 3010 bytes in 8 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 1)
+[pid: 6338|app: 0|req: 1/16] 127.0.0.1 () {42 vars in 761 bytes} [Sat May  5 16:11:17 2018] GET /users/orders/2 => generated 7990 bytes in 281 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 6338|app: 0|req: 2/17] 127.0.0.1 () {40 vars in 654 bytes} [Sat May  5 16:20:05 2018] GET /js/slideshow.js => generated 3010 bytes in 8 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 1)
+[pid: 6337|app: 0|req: 5/18] 127.0.0.1 () {42 vars in 747 bytes} [Sat May  5 16:20:10 2018] GET /users/orders/1 => generated 7392 bytes in 30 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 6340|app: 0|req: 8/19] 127.0.0.1 () {42 vars in 793 bytes} [Sat May  5 16:20:14 2018] GET /order/comment/2018050414154518 => generated 3055 bytes in 3 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 1)
+[pid: 6338|app: 0|req: 3/20] 127.0.0.1 () {42 vars in 793 bytes} [Sat May  5 16:25:18 2018] GET /order/comment/2018050414154518 => generated 3055 bytes in 4 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 0)
+[pid: 6340|app: 0|req: 9/21] 127.0.0.1 () {44 vars in 824 bytes} [Sat May  5 16:26:14 2018] GET /order/comment/2018050414154518 => generated 3055 bytes in 3 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 0)
+[pid: 6340|app: 0|req: 10/22] 127.0.0.1 () {40 vars in 659 bytes} [Sat May  5 16:26:18 2018] GET /js/slideshow.js => generated 3010 bytes in 4 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 1)
+[pid: 6339|app: 0|req: 5/23] 127.0.0.1 () {42 vars in 752 bytes} [Sat May  5 16:26:20 2018] GET /users/orders/1 => generated 7392 bytes in 45 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 6339|app: 0|req: 6/24] 127.0.0.1 () {42 vars in 793 bytes} [Sat May  5 16:26:23 2018] GET /order/comment/2018050414154518 => generated 3055 bytes in 3 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 1)
+[pid: 6337|app: 0|req: 6/25] 127.0.0.1 () {40 vars in 654 bytes} [Sat May  5 16:26:48 2018] GET /js/slideshow.js => generated 3010 bytes in 4 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 1)
+[pid: 6338|app: 0|req: 4/26] 127.0.0.1 () {46 vars in 869 bytes} [Sat May  5 16:27:01 2018] POST /users/login => generated 0 bytes in 32 msecs (HTTP/1.1 302) 6 headers in 392 bytes (1 switches on core 1)
+[pid: 6338|app: 0|req: 5/27] 127.0.0.1 () {40 vars in 659 bytes} [Sat May  5 16:27:01 2018] GET /js/slideshow.js => generated 3010 bytes in 6 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 0)
+[pid: 6337|app: 0|req: 7/28] 127.0.0.1 () {42 vars in 752 bytes} [Sat May  5 16:27:03 2018] GET /users/orders/1 => generated 7392 bytes in 53 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 6339|app: 0|req: 7/29] 127.0.0.1 () {42 vars in 793 bytes} [Sat May  5 16:27:06 2018] GET /order/comment/2018050414154518 => generated 3055 bytes in 3 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 1)
+[pid: 6338|app: 0|req: 6/30] 127.0.0.1 () {44 vars in 824 bytes} [Sat May  5 16:29:33 2018] GET /order/comment/2018050414154518 => generated 3055 bytes in 3 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 1)
+[pid: 6340|app: 0|req: 11/31] 127.0.0.1 () {44 vars in 792 bytes} [Sat May  5 16:29:38 2018] GET /users/orders/2 => generated 7991 bytes in 33 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 6338|app: 0|req: 7/32] 127.0.0.1 () {42 vars in 795 bytes} [Sat May  5 16:29:40 2018] GET /orders/comment/2018050414154518 => generated 6511 bytes in 25 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 6338|app: 0|req: 8/33] 127.0.0.1 () {40 vars in 659 bytes} [Sat May  5 16:30:53 2018] GET /js/slideshow.js => generated 3010 bytes in 4 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 1)
+[pid: 6337|app: 0|req: 8/34] 127.0.0.1 () {42 vars in 752 bytes} [Sat May  5 16:31:16 2018] GET /users/orders/1 => generated 7393 bytes in 34 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+[pid: 6340|app: 0|req: 12/35] 127.0.0.1 () {42 vars in 795 bytes} [Sat May  5 16:31:18 2018] GET /orders/comment/2018050414154518 => generated 3652 bytes in 8 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 1)
+[pid: 6337|app: 0|req: 9/36] 127.0.0.1 () {44 vars in 826 bytes} [Sat May  5 16:32:08 2018] GET /orders/comment/2018050414154518 => generated 3652 bytes in 5 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 0)
+[pid: 6339|app: 0|req: 8/37] 127.0.0.1 () {42 vars in 795 bytes} [Sat May  5 16:32:14 2018] GET /orders/comment/2018050414154518 => generated 3652 bytes in 3 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 0)
+[pid: 6339|app: 0|req: 9/38] 127.0.0.1 () {42 vars in 745 bytes} [Sat May  5 16:32:34 2018] GET /users/orders/2 => generated 7991 bytes in 28 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+[pid: 6339|app: 0|req: 10/39] 127.0.0.1 () {42 vars in 761 bytes} [Sat May  5 16:32:41 2018] GET /users/orders/1 => generated 7393 bytes in 22 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 6339|app: 0|req: 11/40] 127.0.0.1 () {42 vars in 795 bytes} [Sat May  5 16:32:45 2018] GET /orders/comment/2018050412170718 => generated 3652 bytes in 3 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 1)
+[pid: 6338|app: 0|req: 9/41] 127.0.0.1 () {42 vars in 747 bytes} [Sat May  5 16:35:24 2018] GET /users/orders/1 => generated 7393 bytes in 29 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 6338|app: 0|req: 10/42] 127.0.0.1 () {42 vars in 795 bytes} [Sat May  5 16:35:27 2018] GET /orders/comment/2018050412170718 => generated 6511 bytes in 34 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+[pid: 6340|app: 0|req: 13/43] 127.0.0.1 () {40 vars in 659 bytes} [Sat May  5 16:36:23 2018] GET /js/slideshow.js => generated 3010 bytes in 4 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 0)
+[pid: 6337|app: 0|req: 10/44] 127.0.0.1 () {42 vars in 752 bytes} [Sat May  5 16:36:23 2018] GET /users/orders/1 => generated 7393 bytes in 30 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+[pid: 6337|app: 0|req: 11/45] 127.0.0.1 () {42 vars in 795 bytes} [Sat May  5 16:36:26 2018] GET /orders/comment/2018050414154518 => generated 3652 bytes in 4 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 0)
+[pid: 6339|app: 0|req: 12/46] 127.0.0.1 () {42 vars in 795 bytes} [Sat May  5 16:36:30 2018] GET /orders/comment/2018050412170718 => generated 3652 bytes in 4 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 0)
+[pid: 6340|app: 0|req: 14/47] 127.0.0.1 () {42 vars in 795 bytes} [Sat May  5 16:38:53 2018] GET /orders/comment/2018050412170718 => generated 3652 bytes in 4 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 1)
+[pid: 6339|app: 0|req: 13/48] 127.0.0.1 () {44 vars in 826 bytes} [Sat May  5 16:39:12 2018] GET /orders/comment/2018050412170718 => generated 3652 bytes in 3 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 1)
+[pid: 6340|app: 0|req: 15/49] 127.0.0.1 () {40 vars in 654 bytes} [Sat May  5 16:39:30 2018] GET /js/slideshow.js => generated 3010 bytes in 5 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 0)
+[pid: 6338|app: 0|req: 11/50] 127.0.0.1 () {42 vars in 761 bytes} [Sat May  5 16:39:34 2018] GET /users/orders/2 => generated 7991 bytes in 27 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 6337|app: 0|req: 12/51] 127.0.0.1 () {40 vars in 654 bytes} [Sat May  5 16:40:50 2018] GET /js/slideshow.js => generated 3010 bytes in 3 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 1)
+[pid: 6340|app: 0|req: 16/52] 127.0.0.1 () {40 vars in 584 bytes} [Sat May  5 16:41:12 2018] GET /js/slideshow.js => generated 3010 bytes in 5 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 1)
+[pid: 6337|app: 0|req: 13/53] 127.0.0.1 () {40 vars in 646 bytes} [Sat May  5 16:41:14 2018] GET /users/orders/1 => generated 0 bytes in 1 msecs (HTTP/1.1 302) 4 headers in 166 bytes (1 switches on core 0)
+[pid: 6339|app: 0|req: 14/54] 127.0.0.1 () {46 vars in 887 bytes} [Sat May  5 16:41:24 2018] POST /users/login?next=/users/orders/1 => generated 0 bytes in 67 msecs (HTTP/1.1 302) 6 headers in 401 bytes (1 switches on core 0)
+[pid: 6340|app: 0|req: 17/55] 127.0.0.1 () {42 vars in 761 bytes} [Sat May  5 16:41:28 2018] GET /users/orders/3 => generated 7994 bytes in 135 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+缓存不为空, 使用缓存
+[pid: 6339|app: 0|req: 15/56] 127.0.0.1 () {42 vars in 743 bytes} [Sat May  5 16:42:05 2018] GET /index => generated 19125 bytes in 109 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 1)
+[pid: 6340|app: 0|req: 18/57] 127.0.0.1 () {42 vars in 742 bytes} [Sat May  5 16:42:13 2018] GET /detail/17 => generated 10516 bytes in 26 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+[pid: 6338|app: 0|req: 12/58] 127.0.0.1 () {46 vars in 833 bytes} [Sat May  5 16:42:15 2018] POST /cart/add => generated 29 bytes in 7 msecs (HTTP/1.1 200) 3 headers in 94 bytes (1 switches on core 1)
+[pid: 6340|app: 0|req: 19/59] 127.0.0.1 () {46 vars in 833 bytes} [Sat May  5 16:42:20 2018] POST /cart/add => generated 29 bytes in 9 msecs (HTTP/1.1 200) 3 headers in 94 bytes (1 switches on core 0)
+[pid: 6337|app: 0|req: 14/60] 127.0.0.1 () {42 vars in 738 bytes} [Sat May  5 16:42:22 2018] GET /cart/ => generated 12243 bytes in 134 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+Building prefix dict from the default dictionary ...
+Loading model from cache /tmp/jieba.cache
+Loading model cost 1.234 seconds.
+Prefix dict has been built succesfully.
+[pid: 6337|app: 0|req: 15/61] 127.0.0.1 () {46 vars in 846 bytes} [Sat May  5 16:43:08 2018] POST /orders/commit => generated 62 bytes in 1567 msecs (HTTP/1.1 200) 3 headers in 94 bytes (1 switches on core 0)
+[pid: 6337|app: 0|req: 16/62] 127.0.0.1 () {42 vars in 761 bytes} [Sat May  5 16:43:16 2018] GET /users/orders/2 => generated 7584 bytes in 74 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+[pid: 6337|app: 0|req: 17/63] 127.0.0.1 () {42 vars in 761 bytes} [Sat May  5 16:43:18 2018] GET /users/orders/3 => generated 8096 bytes in 87 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 6338|app: 0|req: 13/64] 127.0.0.1 () {42 vars in 761 bytes} [Sat May  5 16:43:20 2018] GET /users/orders/5 => generated 8024 bytes in 28 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 6337|app: 0|req: 18/65] 127.0.0.1 () {46 vars in 842 bytes} [Sat May  5 16:43:26 2018] POST /orders/pay => generated 805 bytes in 1625 msecs (HTTP/1.1 200) 3 headers in 94 bytes (1 switches on core 1)
+[pid: 6339|app: 0|req: 16/66] 127.0.0.1 () {46 vars in 846 bytes} [Sat May  5 16:44:28 2018] POST /orders/check => generated 49 bytes in 44493 msecs (HTTP/1.1 200) 3 headers in 94 bytes (1 switches on core 0)
+[pid: 6338|app: 0|req: 14/67] 127.0.0.1 () {42 vars in 745 bytes} [Sat May  5 16:45:17 2018] GET /users/orders/1 => generated 7476 bytes in 138 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+[pid: 6340|app: 0|req: 20/68] 127.0.0.1 () {42 vars in 761 bytes} [Sat May  5 16:45:22 2018] GET /users/orders/2 => generated 7584 bytes in 28 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+[pid: 6338|app: 0|req: 15/69] 127.0.0.1 () {46 vars in 846 bytes} [Sat May  5 16:45:24 2018] POST /orders/check => generated 49 bytes in 27118 msecs (HTTP/1.1 200) 3 headers in 94 bytes (1 switches on core 0)
+[pid: 6339|app: 0|req: 17/70] 127.0.0.1 () {42 vars in 761 bytes} [Sat May  5 16:45:54 2018] GET /users/orders/5 => generated 8024 bytes in 37 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+[pid: 6337|app: 0|req: 19/71] 127.0.0.1 () {46 vars in 846 bytes} [Sat May  5 16:45:56 2018] POST /orders/check => generated 49 bytes in 34546 msecs (HTTP/1.1 200) 3 headers in 94 bytes (1 switches on core 0)
+[pid: 6337|app: 0|req: 20/72] 127.0.0.1 () {42 vars in 761 bytes} [Sat May  5 16:46:36 2018] GET /users/orders/4 => generated 8099 bytes in 34 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+[pid: 6340|app: 0|req: 21/73] 127.0.0.1 () {42 vars in 761 bytes} [Sat May  5 16:46:38 2018] GET /users/orders/2 => generated 7584 bytes in 34 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 6338|app: 0|req: 16/74] 127.0.0.1 () {42 vars in 795 bytes} [Sat May  5 16:46:43 2018] GET /orders/comment/2018050516430818 => generated 5388 bytes in 19 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+[pid: 6340|app: 0|req: 22/75] 127.0.0.1 () {42 vars in 745 bytes} [Sat May  5 16:47:26 2018] GET /users/orders/1 => generated 7476 bytes in 158 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+[pid: 6337|app: 0|req: 21/76] 127.0.0.1 () {42 vars in 795 bytes} [Sat May  5 16:53:34 2018] GET /orders/comment/2018050515182018 => generated 3652 bytes in 6 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 0)
+[pid: 6337|app: 0|req: 22/77] 127.0.0.1 () {42 vars in 761 bytes} [Sat May  5 16:53:39 2018] GET /users/orders/5 => generated 8024 bytes in 24 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+[pid: 6338|app: 0|req: 17/78] 127.0.0.1 () {40 vars in 654 bytes} [Sat May  5 16:53:58 2018] GET /js/slideshow.js => generated 3010 bytes in 5 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 0)
+[pid: 6339|app: 0|req: 18/79] 127.0.0.1 () {42 vars in 685 bytes} [Sat May  5 16:54:10 2018] GET /js/slideshow.js => generated 3010 bytes in 4 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 0)
+[pid: 6339|app: 0|req: 19/80] 127.0.0.1 () {42 vars in 729 bytes} [Sat May  5 16:54:12 2018] GET /cart/ => generated 10854 bytes in 9 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+[pid: 6339|app: 0|req: 20/81] 127.0.0.1 () {42 vars in 795 bytes} [Sat May  5 16:54:18 2018] GET /orders/comment/2018050516430818 => generated 3652 bytes in 4 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 0)
+缓存不为空, 使用缓存
+[pid: 6339|app: 0|req: 21/82] 127.0.0.1 () {42 vars in 734 bytes} [Sat May  5 16:54:29 2018] GET /index => generated 19125 bytes in 104 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 1)
+[pid: 6340|app: 0|req: 23/83] 127.0.0.1 () {40 vars in 659 bytes} [Sat May  5 16:54:30 2018] GET /js/slideshow.js => generated 3010 bytes in 4 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 0)
+[pid: 6340|app: 0|req: 24/84] 127.0.0.1 () {46 vars in 832 bytes} [Sat May  5 16:54:37 2018] POST /cart/add => generated 29 bytes in 20 msecs (HTTP/1.1 200) 3 headers in 94 bytes (1 switches on core 1)
+[pid: 6338|app: 0|req: 18/85] 127.0.0.1 () {42 vars in 742 bytes} [Sat May  5 16:54:44 2018] GET /detail/13 => generated 10514 bytes in 38 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 6338|app: 0|req: 19/86] 127.0.0.1 () {46 vars in 833 bytes} [Sat May  5 16:54:46 2018] POST /cart/add => generated 29 bytes in 7 msecs (HTTP/1.1 200) 3 headers in 94 bytes (1 switches on core 1)
+[pid: 6337|app: 0|req: 23/87] 127.0.0.1 () {46 vars in 863 bytes} [Sat May  5 16:54:49 2018] POST /orders/place => generated 6713 bytes in 17 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 6337|app: 0|req: 24/88] 127.0.0.1 () {42 vars in 759 bytes} [Sat May  5 16:54:55 2018] GET /users/orders/1 => generated 7582 bytes in 69 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+[pid: 6337|app: 0|req: 25/89] 127.0.0.1 () {46 vars in 846 bytes} [Sat May  5 16:54:57 2018] POST /orders/check => generated 49 bytes in 25399 msecs (HTTP/1.1 200) 3 headers in 94 bytes (1 switches on core 0)
+[pid: 6337|app: 0|req: 26/90] 127.0.0.1 () {42 vars in 795 bytes} [Sat May  5 16:55:27 2018] GET /orders/comment/2018050516545118 => generated 3652 bytes in 4 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 1)
+[pid: 6340|app: 0|req: 25/91] 127.0.0.1 () {42 vars in 747 bytes} [Sat May  5 16:56:09 2018] GET /users/orders/1 => generated 7582 bytes in 167 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 6340|app: 0|req: 26/92] 127.0.0.1 () {42 vars in 761 bytes} [Sat May  5 16:56:14 2018] GET /users/orders/6 => generated 8129 bytes in 30 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+[pid: 6337|app: 0|req: 27/93] 127.0.0.1 () {42 vars in 761 bytes} [Sat May  5 16:56:23 2018] GET /users/orders/1 => generated 7582 bytes in 26 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+首页缓存为空,读取数据库数据
+[pid: 6340|app: 0|req: 27/94] 127.0.0.1 () {42 vars in 743 bytes} [Sat May  5 17:04:31 2018] GET /index => generated 19125 bytes in 153 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 6337|app: 0|req: 28/95] 127.0.0.1 () {40 vars in 659 bytes} [Sat May  5 17:04:31 2018] GET /js/slideshow.js => generated 3010 bytes in 4 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 1)
+[pid: 6337|app: 0|req: 29/96] 127.0.0.1 () {44 vars in 771 bytes} [Sat May  5 17:08:16 2018] GET /detail/1 => generated 12524 bytes in 31 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 6340|app: 0|req: 28/97] 127.0.0.1 () {42 vars in 755 bytes} [Sat May  5 17:23:24 2018] GET /users/orders/1 => generated 7582 bytes in 153 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+[pid: 6337|app: 0|req: 30/98] 127.0.0.1 () {42 vars in 761 bytes} [Sat May  5 17:23:29 2018] GET /users/orders/3 => generated 7689 bytes in 32 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+[pid: 6337|app: 0|req: 31/99] 127.0.0.1 () {42 vars in 761 bytes} [Sat May  5 17:23:33 2018] GET /users/orders/5 => generated 8204 bytes in 35 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 6340|app: 0|req: 29/100] 127.0.0.1 () {42 vars in 743 bytes} [Sat May  5 17:28:19 2018] GET /cart/ => generated 10854 bytes in 11 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 6340|app: 0|req: 30/101] 127.0.0.1 () {40 vars in 659 bytes} [Sat May  5 17:28:21 2018] GET /js/slideshow.js => generated 3010 bytes in 3 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 1)
+[pid: 6339|app: 0|req: 22/102] 127.0.0.1 () {46 vars in 832 bytes} [Sat May  5 17:28:24 2018] POST /cart/add => generated 29 bytes in 16 msecs (HTTP/1.1 200) 3 headers in 94 bytes (1 switches on core 0)
+[pid: 6339|app: 0|req: 23/103] 127.0.0.1 () {46 vars in 832 bytes} [Sat May  5 17:28:25 2018] POST /cart/add => generated 29 bytes in 9 msecs (HTTP/1.1 200) 3 headers in 94 bytes (1 switches on core 1)
+[pid: 6337|app: 0|req: 32/104] 127.0.0.1 () {46 vars in 832 bytes} [Sat May  5 17:28:25 2018] POST /cart/add => generated 29 bytes in 6 msecs (HTTP/1.1 200) 3 headers in 94 bytes (1 switches on core 1)
+[pid: 6338|app: 0|req: 20/105] 127.0.0.1 () {46 vars in 832 bytes} [Sat May  5 17:28:25 2018] POST /cart/add => generated 29 bytes in 11 msecs (HTTP/1.1 200) 3 headers in 94 bytes (1 switches on core 0)
+[pid: 6338|app: 0|req: 21/106] 127.0.0.1 () {46 vars in 832 bytes} [Sat May  5 17:28:26 2018] POST /cart/add => generated 29 bytes in 16 msecs (HTTP/1.1 200) 3 headers in 94 bytes (1 switches on core 1)
+[pid: 6337|app: 0|req: 33/107] 127.0.0.1 () {42 vars in 737 bytes} [Sat May  5 17:28:30 2018] GET /cart/ => generated 11553 bytes in 16 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+缓存不为空, 使用缓存
+[pid: 6340|app: 0|req: 31/108] 127.0.0.1 () {42 vars in 734 bytes} [Sat May  5 17:29:06 2018] GET /index => generated 19125 bytes in 115 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 1)
+[pid: 6340|app: 0|req: 32/109] 127.0.0.1 () {40 vars in 659 bytes} [Sat May  5 17:29:06 2018] GET /js/slideshow.js => generated 3010 bytes in 6 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 0)
+缓存不为空, 使用缓存
+[pid: 6339|app: 0|req: 24/110] 127.0.0.1 () {42 vars in 734 bytes} [Sat May  5 17:31:31 2018] GET /index => generated 19125 bytes in 88 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 6339|app: 0|req: 25/111] 127.0.0.1 () {40 vars in 659 bytes} [Sat May  5 17:31:31 2018] GET /js/slideshow.js => generated 3010 bytes in 6 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 1)
+[pid: 6339|app: 0|req: 26/112] 127.0.0.1 () {42 vars in 737 bytes} [Sat May  5 17:34:47 2018] GET /cart/ => generated 11546 bytes in 10 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+[pid: 6340|app: 0|req: 33/113] 127.0.0.1 () {40 vars in 659 bytes} [Sat May  5 17:34:57 2018] GET /js/slideshow.js => generated 3010 bytes in 5 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 1)
+[pid: 6338|app: 0|req: 22/114] 127.0.0.1 () {42 vars in 740 bytes} [Sat May  5 17:35:00 2018] GET /detail/9 => generated 11400 bytes in 35 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 6337|app: 0|req: 34/115] 127.0.0.1 () {46 vars in 832 bytes} [Sat May  5 17:35:02 2018] POST /cart/add => generated 30 bytes in 7 msecs (HTTP/1.1 200) 3 headers in 94 bytes (1 switches on core 1)
+[pid: 6337|app: 0|req: 35/116] 127.0.0.1 () {42 vars in 737 bytes} [Sat May  5 17:35:04 2018] GET /cart/ => generated 12237 bytes in 14 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 6337|app: 0|req: 36/117] 127.0.0.1 () {42 vars in 795 bytes} [Sat May  5 18:31:09 2018] GET /orders/comment/2018050516545118 => generated 3652 bytes in 7 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 1)
+[pid: 6338|app: 0|req: 23/118] 127.0.0.1 () {42 vars in 761 bytes} [Sat May  5 18:31:21 2018] GET /users/orders/6 => generated 8129 bytes in 38 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+[pid: 6337|app: 0|req: 37/119] 127.0.0.1 () {40 vars in 654 bytes} [Sat May  5 18:32:00 2018] GET /js/slideshow.js => generated 3010 bytes in 4 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 0)
+[pid: 6337|app: 0|req: 38/120] 127.0.0.1 () {42 vars in 747 bytes} [Sat May  5 18:32:02 2018] GET /users/orders/1 => generated 7582 bytes in 35 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+[pid: 6339|app: 0|req: 27/121] 127.0.0.1 () {42 vars in 795 bytes} [Sat May  5 18:32:06 2018] GET /orders/comment/2018050410245918 => generated 3652 bytes in 10 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 0)
+[pid: 6340|app: 0|req: 34/122] 127.0.0.1 () {42 vars in 795 bytes} [Sat May  5 18:32:10 2018] GET /orders/comment/2018050516545118 => generated 3652 bytes in 9 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 0)
+[pid: 6338|app: 0|req: 24/123] 127.0.0.1 () {42 vars in 795 bytes} [Sat May  5 18:32:14 2018] GET /orders/comment/2018050515182018 => generated 5410 bytes in 26 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 6338|app: 0|req: 25/124] 127.0.0.1 () {42 vars in 778 bytes} [Sat May  5 18:36:05 2018] GET /users/orders/1 => generated 7582 bytes in 28 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+[pid: 6338|app: 0|req: 26/125] 127.0.0.1 () {42 vars in 753 bytes} [Sat May  5 18:36:10 2018] GET /users/orders/1 => generated 7582 bytes in 29 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 6338|app: 0|req: 27/126] 127.0.0.1 () {42 vars in 761 bytes} [Sat May  5 18:36:12 2018] GET /users/orders/2 => generated 7667 bytes in 33 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+首页缓存为空,读取数据库数据
+[pid: 6338|app: 0|req: 28/127] 127.0.0.1 () {42 vars in 743 bytes} [Sat May  5 18:36:16 2018] GET /index => generated 19126 bytes in 141 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 6337|app: 0|req: 39/128] 127.0.0.1 () {40 vars in 659 bytes} [Sat May  5 18:36:17 2018] GET /js/slideshow.js => generated 3010 bytes in 8 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 0)
+[pid: 6337|app: 0|req: 40/129] 127.0.0.1 () {42 vars in 751 bytes} [Sat May  5 18:42:16 2018] GET /users/logout => generated 0 bytes in 7 msecs (HTTP/1.1 302) 4 headers in 210 bytes (1 switches on core 1)
+[pid: 6338|app: 0|req: 29/130] 127.0.0.1 () {40 vars in 615 bytes} [Sat May  5 18:42:16 2018] GET /js/slideshow.js => generated 3010 bytes in 7 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 1)
+[pid: 6338|app: 0|req: 30/131] 127.0.0.1 () {42 vars in 702 bytes} [Sat May  5 18:42:17 2018] GET /users/login => generated 2371 bytes in 17 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+缓存不为空, 使用缓存
+[pid: 6340|app: 0|req: 35/132] 127.0.0.1 () {42 vars in 740 bytes} [Sat May  5 18:42:28 2018] GET /index => generated 19126 bytes in 128 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 1)
+[pid: 6340|app: 0|req: 36/133] 127.0.0.1 () {40 vars in 659 bytes} [Sat May  5 18:42:28 2018] GET /js/slideshow.js => generated 3010 bytes in 5 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 0)
+[pid: 6338|app: 0|req: 31/134] 127.0.0.1 () {46 vars in 863 bytes} [Sat May  5 18:42:32 2018] POST /orders/place => generated 0 bytes in 4 msecs (HTTP/1.1 302) 4 headers in 139 bytes (1 switches on core 1)
+[pid: 6338|app: 0|req: 32/135] 127.0.0.1 () {46 vars in 863 bytes} [Sat May  5 18:42:36 2018] POST /orders/place => generated 6277 bytes in 18 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 6339|app: 0|req: 28/136] 127.0.0.1 () {42 vars in 759 bytes} [Sat May  5 18:42:43 2018] GET /users/orders/1 => generated 7162 bytes in 38 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+[pid: 6337|app: 0|req: 41/137] 127.0.0.1 () {42 vars in 795 bytes} [Sat May  5 18:42:48 2018] GET /orders/comment/2018050516430818 => generated 3652 bytes in 9 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 0)
+[pid: 6337|app: 0|req: 42/138] 127.0.0.1 () {42 vars in 795 bytes} [Sat May  5 18:42:54 2018] GET /orders/comment/2018050516545118 => generated 3652 bytes in 5 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 1)
+[pid: 6340|app: 0|req: 37/139] 127.0.0.1 () {42 vars in 795 bytes} [Sat May  5 18:42:59 2018] GET /orders/comment/2018050515182018 => generated 3652 bytes in 3 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 1)
+[pid: 6338|app: 0|req: 33/140] 127.0.0.1 () {42 vars in 795 bytes} [Sat May  5 18:43:04 2018] GET /orders/comment/2018050414154518 => generated 6511 bytes in 24 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+[pid: 6340|app: 0|req: 38/141] 127.0.0.1 () {42 vars in 761 bytes} [Sat May  5 18:43:14 2018] GET /users/orders/6 => generated 8309 bytes in 31 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 6340|app: 0|req: 39/142] 127.0.0.1 () {42 vars in 761 bytes} [Sat May  5 18:43:21 2018] GET /users/orders/7 => generated 8234 bytes in 29 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+[pid: 6339|app: 0|req: 29/143] 127.0.0.1 () {44 vars in 826 bytes} [Sat May  5 18:44:34 2018] GET /orders/comment/2018050410245918 => generated 3652 bytes in 9 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 0)
+[pid: 6339|app: 0|req: 30/144] 127.0.0.1 () {44 vars in 826 bytes} [Sat May  5 18:44:36 2018] GET /orders/comment/2018050410245918 => generated 3652 bytes in 4 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 1)
+*** Starting uWSGI 2.0.17 (64bit) on [Sat May  5 18:45:17 2018] ***
+compiled with version: 5.4.0 20160609 on 05 May 2018 00:37:30
+os: Linux-4.4.0-31-generic #50-Ubuntu SMP Wed Jul 13 00:07:12 UTC 2016
+nodename: ubuntu
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 2
+current working directory: /home/python/qiuwei/dailyfresh/dailyfresh
+writing pidfile to uwsgi.pid
+detected binary path: /home/python/.virtualenvs/django_py3/bin/uwsgi
+chdir() to /home/python/qiuwei/dailyfresh/dailyfresh
+your processes number limit is 15581
+your memory page size is 4096 bytes
+detected max file descriptor number: 1048576
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 127.0.0.1:8081 fd 3
+Python version: 3.5.2 (default, Nov 23 2017, 16:37:01)  [GCC 5.4.0 20160609]
+Set PythonHome to /home/python/.virtualenvs/django_py3
+Python main interpreter initialized at 0x17ae520
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 416880 bytes (407 KB) for 8 cores
+*** Operational MODE: preforking+threaded ***
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x17ae520 pid: 9088 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 9088)
+spawned uWSGI worker 1 (pid: 9092, cores: 2)
+spawned uWSGI worker 2 (pid: 9093, cores: 2)
+spawned uWSGI worker 3 (pid: 9094, cores: 2)
+spawned uWSGI worker 4 (pid: 9096, cores: 2)
+[pid: 9094|app: 0|req: 1/1] 127.0.0.1 () {40 vars in 694 bytes} [Sat May  5 18:45:40 2018] GET /orders/comment/2018050410245918 => generated 27 bytes in 3133 msecs (HTTP/1.1 500) 3 headers in 106 bytes (1 switches on core 0)
+[pid: 9094|app: 0|req: 2/2] 127.0.0.1 () {38 vars in 558 bytes} [Sat May  5 18:45:48 2018] GET /js/slideshow.js => generated 89 bytes in 4 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 1)
+[pid: 9092|app: 0|req: 1/3] 127.0.0.1 () {46 vars in 825 bytes} [Sat May  5 18:46:10 2018] POST /users/login => generated 0 bytes in 199 msecs (HTTP/1.1 302) 6 headers in 392 bytes (1 switches on core 0)
+[pid: 9092|app: 0|req: 2/4] 127.0.0.1 () {40 vars in 659 bytes} [Sat May  5 18:46:11 2018] GET /js/slideshow.js => generated 89 bytes in 3 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 1)
+[pid: 9094|app: 0|req: 3/5] 127.0.0.1 () {42 vars in 734 bytes} [Sat May  5 18:46:17 2018] GET /cart/ => generated 11548 bytes in 103 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 9094|app: 0|req: 4/6] 127.0.0.1 () {42 vars in 761 bytes} [Sat May  5 18:46:24 2018] GET /users/orders/4 => generated 7794 bytes in 49 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+[pid: 9094|app: 0|req: 5/7] 127.0.0.1 () {42 vars in 795 bytes} [Sat May  5 18:46:29 2018] GET /orders/comment/2018050515182018 => generated 5410 bytes in 20 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 9093|app: 0|req: 1/8] 127.0.0.1 () {42 vars in 795 bytes} [Sat May  5 18:46:33 2018] GET /orders/comment/2018050516430818 => generated 5388 bytes in 281 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 9093|app: 0|req: 2/9] 127.0.0.1 () {42 vars in 795 bytes} [Sat May  5 18:46:38 2018] GET /orders/comment/2018050414154518 => generated 6511 bytes in 27 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+[pid: 9094|app: 0|req: 6/10] 127.0.0.1 () {42 vars in 795 bytes} [Sat May  5 18:46:43 2018] GET /orders/comment/2018050516430818 => generated 5388 bytes in 22 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+缓存不为空, 使用缓存
+[pid: 9094|app: 0|req: 7/11] 127.0.0.1 () {42 vars in 648 bytes} [Sat May  5 18:53:51 2018] GET /index => generated 19120 bytes in 109 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 9092|app: 0|req: 3/12] 127.0.0.1 () {42 vars in 611 bytes} [Sat May  5 18:53:51 2018] GET /js/slideshow.js => generated 89 bytes in 1 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 1)
+[pid: 9092|app: 0|req: 4/13] 127.0.0.1 () {40 vars in 659 bytes} [Tue May  8 13:44:27 2018] GET /js/slideshow.js => generated 89 bytes in 48 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 0)
+[pid: 9092|app: 0|req: 5/14] 127.0.0.1 () {38 vars in 673 bytes} [Tue May  8 13:44:27 2018] GET /favicon.ico => generated 85 bytes in 2 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 1)
+[pid: 9093|app: 0|req: 3/15] 127.0.0.1 () {42 vars in 761 bytes} [Tue May  8 13:44:37 2018] GET /users/orders/2 => generated 7773 bytes in 124 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 9094|app: 0|req: 8/16] 127.0.0.1 () {42 vars in 761 bytes} [Tue May  8 13:44:41 2018] GET /users/orders/4 => generated 7794 bytes in 214 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+[pid: 9092|app: 0|req: 6/17] 127.0.0.1 () {42 vars in 761 bytes} [Tue May  8 13:44:44 2018] GET /users/orders/6 => generated 8309 bytes in 640 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+[pid: 9092|app: 0|req: 7/18] 127.0.0.1 () {42 vars in 761 bytes} [Tue May  8 13:44:49 2018] GET /users/orders/5 => generated 8306 bytes in 34 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+首页缓存为空,读取数据库数据
+[pid: 9092|app: 0|req: 8/19] 127.0.0.1 () {40 vars in 696 bytes} [Tue May  8 17:36:45 2018] GET /index => generated 19125 bytes in 474 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 1)
+[pid: 9092|app: 0|req: 9/20] 127.0.0.1 () {40 vars in 659 bytes} [Tue May  8 17:36:46 2018] GET /js/slideshow.js => generated 89 bytes in 2 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 0)
+[pid: 9096|app: 0|req: 1/21] 127.0.0.1 () {42 vars in 752 bytes} [Tue May  8 17:37:09 2018] GET /users/orders/1 => generated 7162 bytes in 1076 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 9093|app: 0|req: 5/22] 127.0.0.1 () {42 vars in 759 bytes} [Tue May  8 17:37:55 2018] GET /users/address => generated 3846 bytes in 47 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 9096|app: 0|req: 2/23] 127.0.0.1 () {42 vars in 735 bytes} [Tue May  8 17:38:03 2018] GET /cart/ => generated 11548 bytes in 159 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+缓存不为空, 使用缓存
+[pid: 9092|app: 0|req: 10/24] 127.0.0.1 () {42 vars in 735 bytes} [Tue May  8 17:38:20 2018] GET /index => generated 19125 bytes in 345 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 1)
+[pid: 9094|app: 0|req: 9/25] 127.0.0.1 () {42 vars in 734 bytes} [Tue May  8 17:39:19 2018] GET /cart/ => generated 11548 bytes in 172 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 9092|app: 0|req: 11/26] 127.0.0.1 () {42 vars in 761 bytes} [Tue May  8 17:40:37 2018] GET /users/orders/2 => generated 7773 bytes in 203 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 9094|app: 0|req: 10/27] 127.0.0.1 () {42 vars in 761 bytes} [Tue May  8 17:40:47 2018] GET /users/orders/2 => generated 7773 bytes in 40 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+[pid: 9094|app: 0|req: 11/28] 127.0.0.1 () {46 vars in 929 bytes} [Tue May  8 17:42:36 2018] POST /orders/comment/2018050516545118 => generated 27 bytes in 402 msecs (HTTP/1.1 500) 3 headers in 106 bytes (1 switches on core 0)
+[pid: 9093|app: 0|req: 5/29] 127.0.0.1 () {46 vars in 846 bytes} [Tue May  8 17:37:15 2018] POST /orders/check => generated 27 bytes in 706469 msecs (HTTP/1.1 500) 3 headers in 106 bytes (1 switches on core 1)
+缓存不为空, 使用缓存
+[pid: 9092|app: 0|req: 12/30] 127.0.0.1 () {40 vars in 696 bytes} [Tue May  8 17:54:33 2018] GET /index => generated 19125 bytes in 467 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 1)
+[pid: 9093|app: 0|req: 6/31] 127.0.0.1 () {40 vars in 659 bytes} [Tue May  8 17:54:33 2018] GET /js/slideshow.js => generated 89 bytes in 3 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 0)
+缓存不为空, 使用缓存
+[pid: 9093|app: 0|req: 7/32] 127.0.0.1 () {42 vars in 738 bytes} [Tue May  8 17:56:57 2018] GET /index => generated 19125 bytes in 119 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 1)
+[pid: 9093|app: 0|req: 8/33] 127.0.0.1 () {40 vars in 659 bytes} [Tue May  8 17:56:57 2018] GET /js/slideshow.js => generated 89 bytes in 2 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 0)
+[pid: 9096|app: 0|req: 3/34] 127.0.0.1 () {42 vars in 753 bytes} [Tue May  8 17:57:07 2018] GET /users/orders/1 => generated 7162 bytes in 34 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 9094|app: 0|req: 12/35] 127.0.0.1 () {42 vars in 744 bytes} [Tue May  8 17:57:10 2018] GET /users/ => generated 5894 bytes in 25 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 1)
+[pid: 9096|app: 0|req: 4/36] 127.0.0.1 () {40 vars in 654 bytes} [Fri May 11 12:56:34 2018] GET /js/slideshow.js => generated 89 bytes in 322 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 1)
+[pid: 9094|app: 0|req: 13/37] 127.0.0.1 () {42 vars in 741 bytes} [Fri May 11 12:56:36 2018] GET /users/login => generated 2371 bytes in 441 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+首页缓存为空,读取数据库数据
+[pid: 9092|app: 0|req: 13/38] 127.0.0.1 () {42 vars in 740 bytes} [Fri May 11 12:56:45 2018] GET /index => generated 19125 bytes in 795 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 1)
+[pid: 9094|app: 0|req: 14/39] 127.0.0.1 () {40 vars in 659 bytes} [Fri May 11 12:56:46 2018] GET /js/slideshow.js => generated 89 bytes in 239 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 1)
+[pid: 9092|app: 0|req: 14/40] 127.0.0.1 () {42 vars in 761 bytes} [Fri May 11 12:56:52 2018] GET /users/orders/2 => generated 7773 bytes in 185 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 9094|app: 0|req: 15/41] 127.0.0.1 () {42 vars in 761 bytes} [Fri May 11 12:57:04 2018] GET /users/orders/4 => generated 7794 bytes in 447 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 9094|app: 0|req: 16/42] 127.0.0.1 () {42 vars in 795 bytes} [Fri May 11 12:57:10 2018] GET /orders/comment/2018050414154518 => generated 6521 bytes in 131 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+[pid: 9094|app: 0|req: 17/43] 127.0.0.1 () {42 vars in 795 bytes} [Fri May 11 13:01:28 2018] GET /orders/comment/2018050414154518 => generated 6521 bytes in 199 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 9094|app: 0|req: 18/44] 127.0.0.1 () {42 vars in 761 bytes} [Fri May 11 13:01:43 2018] GET /users/orders/4 => generated 7794 bytes in 75 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+缓存不为空, 使用缓存
+[pid: 9094|app: 0|req: 19/45] 127.0.0.1 () {42 vars in 743 bytes} [Fri May 11 13:02:01 2018] GET /index => generated 19125 bytes in 427 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 9094|app: 0|req: 20/46] 127.0.0.1 () {42 vars in 742 bytes} [Fri May 11 13:02:05 2018] GET /detail/17 => generated 11401 bytes in 103 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+[pid: 9094|app: 0|req: 21/47] 127.0.0.1 () {40 vars in 659 bytes} [Fri May 11 13:08:11 2018] GET /js/slideshow.js => generated 89 bytes in 21 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 0)
+[pid: 9094|app: 0|req: 22/48] 127.0.0.1 () {42 vars in 761 bytes} [Fri May 11 13:08:17 2018] GET /users/orders/2 => generated 7773 bytes in 81 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+[pid: 9094|app: 0|req: 23/49] 127.0.0.1 () {42 vars in 761 bytes} [Fri May 11 13:08:21 2018] GET /users/orders/4 => generated 7794 bytes in 46 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 9092|app: 0|req: 15/50] 127.0.0.1 () {46 vars in 929 bytes} [Fri May 11 13:08:29 2018] POST /orders/comment/2018050515182018 => generated 27 bytes in 347 msecs (HTTP/1.1 500) 3 headers in 106 bytes (1 switches on core 1)
+[pid: 9092|app: 0|req: 16/51] 127.0.0.1 () {40 vars in 659 bytes} [Fri May 11 13:09:50 2018] GET /js/slideshow.js => generated 89 bytes in 2 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 0)
+[pid: 9092|app: 0|req: 17/52] 127.0.0.1 () {48 vars in 960 bytes} [Fri May 11 13:14:03 2018] POST /orders/comment/2018050515182018 => generated 27 bytes in 71 msecs (HTTP/1.1 500) 3 headers in 106 bytes (1 switches on core 0)
+[pid: 9094|app: 0|req: 24/53] 127.0.0.1 () {42 vars in 761 bytes} [Fri May 11 13:14:23 2018] GET /users/orders/6 => generated 8309 bytes in 169 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+[pid: 9094|app: 0|req: 25/54] 127.0.0.1 () {42 vars in 761 bytes} [Fri May 11 13:14:27 2018] GET /users/orders/5 => generated 8306 bytes in 198 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 9094|app: 0|req: 26/55] 127.0.0.1 () {42 vars in 795 bytes} [Fri May 11 13:14:30 2018] GET /orders/comment/2018050412170718 => generated 6521 bytes in 22 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+[pid: 9096|app: 0|req: 5/56] 127.0.0.1 () {46 vars in 929 bytes} [Fri May 11 13:17:21 2018] POST /orders/comment/2018050412170718 => generated 27 bytes in 407 msecs (HTTP/1.1 500) 3 headers in 106 bytes (1 switches on core 0)
+[pid: 9092|app: 0|req: 18/57] 127.0.0.1 () {42 vars in 761 bytes} [Fri May 11 13:17:36 2018] GET /users/orders/7 => generated 8234 bytes in 199 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+[pid: 9096|app: 0|req: 6/58] 127.0.0.1 () {46 vars in 929 bytes} [Fri May 11 13:17:49 2018] POST /orders/comment/2018050410245918 => generated 27 bytes in 210 msecs (HTTP/1.1 500) 3 headers in 106 bytes (1 switches on core 1)
+[pid: 9092|app: 0|req: 19/59] 127.0.0.1 () {42 vars in 747 bytes} [Fri May 11 13:22:10 2018] GET /users/orders/1 => generated 7162 bytes in 116 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 9094|app: 0|req: 27/60] 127.0.0.1 () {42 vars in 761 bytes} [Fri May 11 13:22:17 2018] GET /users/orders/7 => generated 8234 bytes in 159 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 9094|app: 0|req: 28/61] 127.0.0.1 () {46 vars in 835 bytes} [Fri May 11 13:22:25 2018] POST /cart/update => generated 29 bytes in 123 msecs (HTTP/1.1 200) 3 headers in 94 bytes (1 switches on core 1)
+[pid: 9092|app: 0|req: 20/62] 127.0.0.1 () {46 vars in 863 bytes} [Fri May 11 13:22:27 2018] POST /orders/place => generated 6278 bytes in 186 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+[pid: 9094|app: 0|req: 29/63] 127.0.0.1 () {42 vars in 759 bytes} [Fri May 11 13:22:37 2018] GET /users/orders/1 => generated 7269 bytes in 157 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 9094|app: 0|req: 31/64] 127.0.0.1 () {40 vars in 659 bytes} [Fri May 11 13:22:48 2018] GET /js/slideshow.js => generated 89 bytes in 1 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 0)
+[pid: 9093|app: 0|req: 9/65] 127.0.0.1 () {42 vars in 740 bytes} [Fri May 11 13:22:50 2018] GET /detail/4 => generated 11395 bytes in 863 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+[pid: 9092|app: 0|req: 21/66] 127.0.0.1 () {46 vars in 832 bytes} [Fri May 11 13:22:53 2018] POST /cart/add => generated 29 bytes in 168 msecs (HTTP/1.1 200) 3 headers in 94 bytes (1 switches on core 0)
+[pid: 9092|app: 0|req: 22/67] 127.0.0.1 () {46 vars in 833 bytes} [Fri May 11 13:22:59 2018] POST /cart/add => generated 29 bytes in 36 msecs (HTTP/1.1 200) 3 headers in 94 bytes (1 switches on core 1)
+[pid: 9094|app: 0|req: 32/68] 127.0.0.1 () {42 vars in 742 bytes} [Fri May 11 13:23:03 2018] GET /detail/19 => generated 11406 bytes in 140 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 9092|app: 0|req: 23/69] 127.0.0.1 () {42 vars in 738 bytes} [Fri May 11 13:23:06 2018] GET /cart/ => generated 12909 bytes in 102 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+Building prefix dict from the default dictionary ...
+Loading model from cache /tmp/jieba.cache
+Loading model cost 0.901 seconds.
+Prefix dict has been built succesfully.
+[pid: 9093|app: 0|req: 10/70] 127.0.0.1 () {46 vars in 846 bytes} [Fri May 11 13:23:10 2018] POST /orders/commit => generated 62 bytes in 1835 msecs (HTTP/1.1 200) 3 headers in 94 bytes (1 switches on core 0)
+[pid: 9093|app: 0|req: 11/71] 127.0.0.1 () {42 vars in 741 bytes} [Fri May 11 13:23:20 2018] GET /cart/ => generated 12227 bytes in 33 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+Building prefix dict from the default dictionary ...
+Loading model from cache /tmp/jieba.cache
+Loading model cost 2.890 seconds.
+Prefix dict has been built succesfully.
+[pid: 9094|app: 0|req: 33/72] 127.0.0.1 () {46 vars in 846 bytes} [Fri May 11 13:23:25 2018] POST /orders/commit => generated 62 bytes in 3515 msecs (HTTP/1.1 200) 3 headers in 94 bytes (1 switches on core 0)
+[pid: 9093|app: 0|req: 12/73] 127.0.0.1 () {46 vars in 863 bytes} [Fri May 11 13:23:40 2018] POST /orders/place => generated 6271 bytes in 89 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 9096|app: 0|req: 7/74] 127.0.0.1 () {42 vars in 759 bytes} [Fri May 11 13:23:46 2018] GET /users/orders/1 => generated 7582 bytes in 189 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 9096|app: 0|req: 8/75] 127.0.0.1 () {46 vars in 842 bytes} [Fri May 11 13:23:53 2018] POST /orders/pay => generated 810 bytes in 345 msecs (HTTP/1.1 200) 3 headers in 94 bytes (1 switches on core 1)
+[pid: 9092|app: 0|req: 24/76] 127.0.0.1 () {42 vars in 761 bytes} [Fri May 11 13:25:40 2018] GET /users/orders/2 => generated 7668 bytes in 232 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+[pid: 9092|app: 0|req: 25/77] 127.0.0.1 () {46 vars in 842 bytes} [Fri May 11 13:25:42 2018] POST /orders/pay => generated 798 bytes in 536 msecs (HTTP/1.1 200) 3 headers in 94 bytes (1 switches on core 0)
+[pid: 9093|app: 0|req: 13/78] 127.0.0.1 () {42 vars in 761 bytes} [Fri May 11 13:25:56 2018] GET /users/orders/3 => generated 7666 bytes in 204 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+[pid: 9094|app: 0|req: 34/79] 127.0.0.1 () {46 vars in 846 bytes} [Fri May 11 13:24:54 2018] POST /orders/check => generated 49 bytes in 85953 msecs (HTTP/1.1 200) 3 headers in 94 bytes (1 switches on core 0)
+[pid: 9093|app: 0|req: 14/80] 127.0.0.1 () {46 vars in 846 bytes} [Fri May 11 13:25:57 2018] POST /orders/check => generated 49 bytes in 31793 msecs (HTTP/1.1 200) 3 headers in 94 bytes (1 switches on core 0)
+[pid: 9093|app: 0|req: 15/81] 127.0.0.1 () {42 vars in 745 bytes} [Fri May 11 13:26:29 2018] GET /users/orders/3 => generated 7666 bytes in 103 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+[pid: 9094|app: 0|req: 35/82] 127.0.0.1 () {42 vars in 795 bytes} [Fri May 11 13:26:34 2018] GET /orders/comment/2018051113234318 => generated 4281 bytes in 162 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+SIGINT/SIGQUIT received...killing workers...
+worker 3 buried after 1 seconds
+worker 1 buried after 2 seconds
+worker 2 buried after 2 seconds
+worker 4 buried after 2 seconds
+goodbye to uWSGI.
+*** Starting uWSGI 2.0.17 (64bit) on [Fri May 11 13:40:30 2018] ***
+compiled with version: 5.4.0 20160609 on 05 May 2018 00:37:30
+os: Linux-4.4.0-31-generic #50-Ubuntu SMP Wed Jul 13 00:07:12 UTC 2016
+nodename: ubuntu
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 2
+current working directory: /home/python/qiuwei/dailyfresh/dailyfresh
+writing pidfile to uwsgi.pid
+detected binary path: /home/python/.virtualenvs/django_py3/bin/uwsgi
+chdir() to /home/python/qiuwei/dailyfresh/dailyfresh
+your processes number limit is 15581
+your memory page size is 4096 bytes
+detected max file descriptor number: 1048576
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 127.0.0.1:8081 fd 3
+Python version: 3.5.2 (default, Nov 23 2017, 16:37:01)  [GCC 5.4.0 20160609]
+Set PythonHome to /home/python/.virtualenvs/django_py3
+Python main interpreter initialized at 0x1bd8520
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 416880 bytes (407 KB) for 8 cores
+*** Operational MODE: preforking+threaded ***
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x1bd8520 pid: 20235 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 20235)
+spawned uWSGI worker 1 (pid: 20239, cores: 2)
+spawned uWSGI worker 2 (pid: 20240, cores: 2)
+spawned uWSGI worker 3 (pid: 20242, cores: 2)
+spawned uWSGI worker 4 (pid: 20243, cores: 2)
+[pid: 20240|app: 0|req: 1/1] 127.0.0.1 () {40 vars in 654 bytes} [Fri May 11 13:40:54 2018] GET /js/slideshow.js => generated 3010 bytes in 244 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 0)
+[pid: 20242|app: 0|req: 1/2] 127.0.0.1 () {42 vars in 731 bytes} [Fri May 11 13:41:01 2018] GET /users/ => generated 5875 bytes in 448 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 20242|app: 0|req: 2/3] 127.0.0.1 () {42 vars in 685 bytes} [Fri May 11 13:41:04 2018] GET /js/slideshow.js => generated 3010 bytes in 20 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 1)
+[pid: 20242|app: 0|req: 3/4] 127.0.0.1 () {42 vars in 685 bytes} [Fri May 11 13:41:04 2018] GET /js/slideshow.js => generated 3010 bytes in 4 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 0)
+[pid: 20242|app: 0|req: 4/5] 127.0.0.1 () {42 vars in 737 bytes} [Fri May 11 13:41:12 2018] GET /detail/26 => generated 11591 bytes in 277 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 20243|app: 0|req: 1/6] 127.0.0.1 () {42 vars in 756 bytes} [Fri May 11 13:41:19 2018] GET /users/orders/1 => generated 7582 bytes in 418 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 20243|app: 0|req: 2/7] 127.0.0.1 () {42 vars in 761 bytes} [Fri May 11 13:41:22 2018] GET /users/orders/2 => generated 7668 bytes in 58 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+[pid: 20239|app: 0|req: 1/8] 127.0.0.1 () {42 vars in 795 bytes} [Fri May 11 13:41:23 2018] GET /orders/comment/2018051113232518 => generated 4282 bytes in 320 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+order_id: 2018051113232518
+order: OrderInfo object
+[pid: 20243|app: 0|req: 3/9] 127.0.0.1 () {46 vars in 929 bytes} [Fri May 11 13:41:31 2018] POST /orders/comment/2018051113232518 => generated 0 bytes in 163 msecs (HTTP/1.1 302) 4 headers in 148 bytes (1 switches on core 0)
+[pid: 20243|app: 0|req: 4/10] 127.0.0.1 () {42 vars in 778 bytes} [Fri May 11 13:41:31 2018] GET /users/orders/1 => generated 7582 bytes in 65 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+[pid: 20239|app: 0|req: 2/11] 127.0.0.1 () {42 vars in 761 bytes} [Fri May 11 13:44:30 2018] GET /users/orders/3 => generated 7666 bytes in 130 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+[pid: 20243|app: 0|req: 5/12] 127.0.0.1 () {42 vars in 795 bytes} [Fri May 11 13:47:35 2018] GET /orders/comment/2018051113231018 => generated 4280 bytes in 123 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+order_id: 2018051113231018
+order: OrderInfo object
+[pid: 20242|app: 0|req: 5/13] 127.0.0.1 () {46 vars in 929 bytes} [Fri May 11 13:47:41 2018] POST /orders/comment/2018051113231018 => generated 0 bytes in 125 msecs (HTTP/1.1 302) 4 headers in 148 bytes (1 switches on core 1)
+[pid: 20239|app: 0|req: 3/14] 127.0.0.1 () {42 vars in 778 bytes} [Fri May 11 13:47:41 2018] GET /users/orders/1 => generated 7582 bytes in 48 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+首页缓存为空,读取数据库数据
+[pid: 20239|app: 0|req: 4/15] 127.0.0.1 () {42 vars in 743 bytes} [Fri May 11 13:47:44 2018] GET /index => generated 19125 bytes in 297 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 1)
+[pid: 20240|app: 0|req: 2/16] 127.0.0.1 () {40 vars in 659 bytes} [Fri May 11 13:47:44 2018] GET /js/slideshow.js => generated 3010 bytes in 5 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 1)
+[pid: 20239|app: 0|req: 5/17] 127.0.0.1 () {40 vars in 659 bytes} [Fri May 11 13:47:44 2018] GET /js/slideshow.js => generated 3010 bytes in 4 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 0)
+[pid: 20240|app: 0|req: 3/18] 127.0.0.1 () {42 vars in 742 bytes} [Fri May 11 13:47:48 2018] GET /detail/19 => generated 11581 bytes in 229 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
